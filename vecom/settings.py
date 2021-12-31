@@ -72,8 +72,8 @@ DATABASES = {
     }
 }
 
-print('\n\n\n\n\n', DEBUG)
 if DEBUG is False:
+    print('VIKAS - ', DEBUG)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
