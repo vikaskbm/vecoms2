@@ -6,7 +6,7 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG')
+DEBUG = (config('DEBUG') == 'True')
 ALLOWED_HOSTS = ['vecoms.herokuapp.com', '127.0.0.1']
 
 INSTALLED_APPS = [
@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 PAYPAL_CLIENT_ID = config('PAYPAL_SANDBOX_CLIENT_ID')
 PAYPAL_SECRET_KEY = config('PAYPAL_SANDBOX_SECRET_KEY')
 
-STRIPE_PUBLISH_KEY = config("STRIPE_PUBLISH_KEY")
+STRIPE_PUBLIC_KEY = config("STRIPE_PUBLISH_KEY")
 STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET = config("STRIPE_WEBHOOK_SECRET")
 
