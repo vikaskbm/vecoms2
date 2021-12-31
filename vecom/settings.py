@@ -72,7 +72,7 @@ DATABASES = {
     }
 }
 
-if DEBUG is False:
+if DEBUG is 'False':
     print('VIKAS - ', DEBUG)
     DATABASES = {
         'default': {
