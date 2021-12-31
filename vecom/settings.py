@@ -72,7 +72,7 @@ DATABASES = {
     }
 }
 
-print('\n\n\n\n\nDEBUG')
+print('\n\n\n\n\n', DEBUG)
 if DEBUG is False:
     DATABASES = {
         'default': {
