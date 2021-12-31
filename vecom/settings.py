@@ -72,6 +72,19 @@ DATABASES = {
     }
 }
 
+print('\n\n\n\n\nDEBUG')
+if DEBUG is False:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': config('DB_PORT')
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -139,17 +152,6 @@ if DEBUG is False:
     EMAIL_PORT = 587
     EMAIL_HOST_USER = config('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME'),
-            'USER': config('DB_USER'),
-            'PASSWORD': config('DB_PASSWORD'),
-            'HOST': config('DB_HOST'),
-            'PORT': config('DB_PORT')
-        }
-    }
 
     PAYPAL_CLIENT_ID = config('PAYPAL_LIVE_CLIENT_ID')
     PAYPAL_SECRET_KEY = config('PAYPAL_LIVE_SECRET_KEY')
